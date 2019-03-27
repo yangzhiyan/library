@@ -32,3 +32,10 @@ a{
 span,a{
     display:inline-block;
 }
+/* 清除浮动 */
+.clearfix:after {
+    content: ' ';
+    height: 0;
+    display: block;
+    clear: both;
+}

@@ -5,7 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import Index from '../page/index';
 import FrontIndex from '../page/frontIndex';
-
+import Test from '../page/test';
 
 Vue.use(ElementUI);
 Vue.use(Router);
@@ -23,6 +23,10 @@ let router = new Router({
           component: FrontIndex
         }
       ]
+    },{
+      path: "/test",
+      name: 'Test',
+      component: Test
     },{
       path: '*',
       redirect: '/'
