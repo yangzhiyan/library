@@ -1,42 +1,42 @@
 <template>
   <div class="test">
-    <writer-special :wSpecialText="wSpecialText"></writer-special>
+    <!-- <writer-special :wSpecialText="wSpecialText"></writer-special> -->
+    <read-share :data="readShareData"></read-share>
   </div>
 </template>
 
 <script>
-import WriterSpecial from '../components/writerSpecial'
+// import WriterSpecial from '../components/writerSpecial'
+import ReadShare from '../components/readShare'
 
 export default {
   name: 'Test',
   components : {
-      WriterSpecial
+      // WriterSpecial,
+    ReadShare
   },
   data(){
     return{
       value1:"",
       value2:"默认",
-      wSpecialText: {
-        title: "作家专栏",
-        linkname: "专栏首页",
-        link: "/",
-        content: [
-            {
-                conTitle: "《三体》",
-                conText: "一个你所不知道的世界，你想象不到的世界",
-                src: require("../../public/imgs/lunbo/special_1.jpeg")
-            },{
-                conTitle: "《三体2》",
-                conText: "一个你所不知道的世界2，你想象不到的世界2",
-                src: require("../../public/imgs/lunbo/special_2.jpeg")
-            },{
-                conTitle: "《三体3》",
-                conText: "一个你所不知道的世界3，你想象不到的世界3",
-                src: require("../../public/imgs/lunbo/special_3.jpeg")
-                
-            }
-        ]
-      }
+      readShareData: [
+        {
+          title: "普吉&斯米兰",
+          content: "精彩提前看 心路历程 过完年后生活太苦，必须要出去玩一下调节一下心态 ……提前3周定机票，提前2周安排的行程，，是一场准备很仓促的旅行（ 好听点就是说走就走的旅行）…… 重点注意事项",
+          author: "zhiyanmememda",
+          watch: 335,
+          favour: 699,
+          link: require("../../public/imgs/lunbo/special_1.jpeg")
+        },{
+          title: "普吉&斯米兰",
+          content: "精彩提前看 心路历程 过完年后生活太苦，必须要出去玩一下调节一下心态 ……提前3周定机票，提前2周安排的行程，，是一场准备很仓促的旅行（ 好听点就是说走就走的旅行）…… 重点注意事项",
+          author: "zhiyanmememda",
+          watch: 335,
+          favour: 699,
+          link: require("../../public/imgs/lunbo/special_1.jpeg")
+        }
+      ]
+
          
       
     }

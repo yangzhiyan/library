@@ -7,11 +7,11 @@
     <el-carousel>
         <el-carousel-item v-for="(item,index) in wSpecialText.content" :key="index">
             <img :src="item.src" alt="">
-            <p>{{item.conTitle}}</p>
+            <a :href="item.link">{{item.conTitle}}</a>
             <div>{{item.conText}}</div>
         </el-carousel-item>
     </el-carousel>
-    <div>hello</div>
+    <!-- <div>hello</div> -->
   </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
         width: 260px;
         height: 310px;
         padding: 8px;
-        background-color: pink;
+        // background-color: pink;
         position: relative;
         .writer-special-title {
             padding: 4px 0px;
@@ -58,9 +58,14 @@ export default {
             }
         }
         .el-carousel__item {
-            p {
-                text-align: left;
+            text-align: left;
+            a {
+                margin-left: 0px;
                 line-height: 30px;
+                color: rgba(0,0,0,0.75)
+            }
+            a:hover {
+                color: #F5AA10;
             }
             div {
                 text-align: left;
