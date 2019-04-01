@@ -2,10 +2,24 @@
   <div class="test">
     <!-- <writer-special :wSpecialText="wSpecialText"></writer-special> -->
     <read-share :data="readShareData"></read-share>
+    <el-upload
+      action="https://jsonplaceholder.typicode.com/posts/"
+      list-type="picture-card"
+      :on-preview="handlePictureCardPreview"
+      :on-remove="handleRemove">
+      <i class="el-icon-plus"></i>
+    </el-upload>
+    <el-dialog :visible.sync="dialogVisible">
+      <img width="100%" :src="dialogImageUrl" alt="">
+    </el-dialog>
+    <div id="editor" contenteditable="true">
+
+    </div>
   </div>
 </template>
 
 <script>
+/* eslint-disable */ 
 // import WriterSpecial from '../components/writerSpecial'
 import ReadShare from '../components/readShare'
 
@@ -15,10 +29,21 @@ export default {
       // WriterSpecial,
     ReadShare
   },
+  mounted(){
+    $("#editor").emoji({
+        button: "#btn",
+        showTab: false,
+        animation: 'slide',
+        basePath: 'images/emoji',
+        icons: emojiLists   // 注：详见 js/emoji.list.js
+    });
+  },
   data(){
     return{
       value1:"",
       value2:"默认",
+      dialogImageUrl: '',
+      dialogVisible: false,
       readShareData: [
         {
           title: "普吉&斯米兰",
@@ -40,7 +65,17 @@ export default {
          
       
     }
-    
+  },
+  methods: {
+    handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
+        console.log(this.dialogImageUrl);
+      }
+      
   }
 }
 </script>

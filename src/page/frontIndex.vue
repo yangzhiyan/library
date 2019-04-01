@@ -11,15 +11,18 @@
     <div class="content clearfix">
         <div class="left-content">
             <writer-special :wSpecialText="wSpecialText"></writer-special>
+            <writer-special :wSpecialText="oneimg"></writer-special>
         </div>
         <div class="right-content">
             <div class="title">
-                <span class="hot-share" :class="{'hot-share-line':hotShareLine}">热门分享</span>
-                <span class="lasted-publish" :class="{'lasted-publish-line':lastedPublishLine}">最新发表</span>
+                <span class="hot-share" :class="{'hot-share-line':hotShareLine}" @click="changeTitle('hotShareLine')">热门分享</span>
+                <span class="lasted-publish" :class="{'lasted-publish-line':lastedPublishLine}" @click="changeTitle('lastedPublishLine')">最新发表</span>
             </div>
             <read-share :data="readShareData"></read-share>
         </div>
+        <img src="blob:http://localhost:8080/be90ce8b-2972-4a06-b58a-49ab8dc897fa" alt="">
     </div>
+    
   </div>
 </template>
 
@@ -76,6 +79,19 @@ export default {
                 }
             ]
         },
+        oneimg: {
+            title: "旅游攻略",
+            linkname: "更多",
+            link: "/",
+            content: [
+                {
+                    conTitle: "《三体》",
+                    conText: "一个你所不知道的世界，你想象不到的世界",
+                    src: require("../../public/imgs/lunbo/special_3.jpeg"),
+                    link: "#"
+                }
+            ]
+        },
         readShareData: [
             {
                 title: "普吉&斯米兰",
@@ -94,7 +110,17 @@ export default {
             }
         ]
     }
-    
+  },
+  methods: {
+      changeTitle(value){
+        if(value==="hotShareLine"){
+            this.hotShareLine = true;
+            this.lastedPublishLine = false;
+        }else if(value==="lastedPublishLine"){
+            this.hotShareLine = false;
+            this.lastedPublishLine = true;
+        }
+      }
   }
 }
 </script>
@@ -137,7 +163,6 @@ export default {
                 min-height: 300px;
                 float: left;
                 padding: 24px 24px;
-                
                 .title {
                     width: 632px;
                     border-bottom: 1px solid #e4e4e4;
@@ -148,11 +173,11 @@ export default {
                         font-size: 18px;
                         line-height: 50px;
                         text-indent: 6px;
+                        text-align: center;
                     }
                     .hot-share-line,.lasted-publish-line {
                         border-bottom: 3px solid #ff9d00;
                     }
-
                 }
             }
         }
