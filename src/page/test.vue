@@ -13,7 +13,7 @@
       <img width="100%" :src="dialogImageUrl" alt="">
     </el-dialog>
     <div id="editor" contenteditable="true">
-
+      
     </div>
   </div>
 </template>
@@ -30,13 +30,6 @@ export default {
     ReadShare
   },
   mounted(){
-    $("#editor").emoji({
-        button: "#btn",
-        showTab: false,
-        animation: 'slide',
-        basePath: 'images/emoji',
-        icons: emojiLists   // 注：详见 js/emoji.list.js
-    });
   },
   data(){
     return{
@@ -68,13 +61,13 @@ export default {
   },
   methods: {
     handleRemove(file, fileList) {
-        console.log(file, fileList);
-      },
-      handlePictureCardPreview(file) {
-        this.dialogImageUrl = file.url;
-        this.dialogVisible = true;
-        console.log(this.dialogImageUrl);
-      }
+      console.log(file, fileList);
+    },
+    handlePictureCardPreview(file) {
+      this.dialogImageUrl = file.url;
+      this.dialogVisible = true;
+      console.log(this.dialogImageUrl);
+    }
       
   }
 }

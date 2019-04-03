@@ -5,6 +5,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import Index from '../page/index';
 import FrontIndex from '../page/frontIndex';
+import Book from '../page/book';
+import Ebook from '../page/ebook';
+import Shop from '../page/shop';
 import Test from '../page/test';
 
 Vue.use(ElementUI);
@@ -21,6 +24,18 @@ let router = new Router({
           path: "index",
           name: 'FrontIndex',
           component: FrontIndex
+        },{
+          path: "book",
+          name: 'Book',
+          component: Book
+        },{
+          path: "ebook",
+          name: 'Ebook',
+          component: Ebook
+        },{
+          path: "shop",
+          name: 'Shop',
+          component: Shop
         }
       ]
     },{

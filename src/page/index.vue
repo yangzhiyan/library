@@ -4,10 +4,18 @@
     <div class="index-nav">
         <div class="logo"></div>
         <div class="logo-text">北斗星</div>
-        <div class="text">首页</div>
-        <div class="text">一本好书</div>
-        <div class="text">电子书</div>
-        <div class="text">商城</div>
+        <a href="/#/index">
+            <div class="text">首页</div>
+        </a>
+        <a href="/#/book">
+            <div class="text">一本好书</div>
+        </a>
+        <a href="/#/ebook">
+            <div class="text">电子书</div>
+        </a>
+        <a href="/#/shop">
+            <div class="text">商城</div>
+        </a>
         <div class="search"><input type="text"><span class="el-icon-search"></span></div>
         <div class="login"><span>登录</span>|<span>注册</span></div>
     </div>
@@ -54,6 +62,10 @@ export default {
             height: 70px;
             // background-color: pink;
             margin: 0 auto;
+            a {
+                color: #3c3c3c;
+                float: left;
+            }
             div {
                 float: left;
             }
