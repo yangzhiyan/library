@@ -20,7 +20,6 @@
             </div>
             <read-share :data="readShareData"></read-share>
         </div>
-        <img src="blob:http://localhost:8080/be90ce8b-2972-4a06-b58a-49ab8dc897fa" alt="">
     </div>
     
   </div>
