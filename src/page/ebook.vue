@@ -1,8 +1,5 @@
 <template>
   <div class="ebook">
-    <div class="ebbok-list">
-
-    </div>
     <book-list :data="bookData"></book-list>
   </div>
 </template>
@@ -26,6 +23,7 @@ export default {
       bookData : {
         title : "图书 ● 畅销榜",
         scribe : "本周销量 TOP 15",
+        type : "good_sale",
         data : [
           {
             name : "月亮与六便士",
@@ -80,5 +78,6 @@ export default {
   .ebook {
     width: 960px;
     padding: 20px;
+    margin: 0 auto;
   }
 </style>
