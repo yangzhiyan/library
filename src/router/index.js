@@ -8,7 +8,9 @@ import FrontIndex from '../page/frontIndex';
 import Book from '../page/book';
 import Ebook from '../page/ebook';
 import Shop from '../page/shop';
+import RankList from '../page/rankList';
 import Test from '../page/test';
+
 
 Vue.use(ElementUI);
 Vue.use(Router);
@@ -31,11 +33,18 @@ let router = new Router({
         },{
           path: "ebook",
           name: 'Ebook',
-          component: Ebook
+          component: Ebook,
+          children: [
+           
+          ]
         },{
           path: "shop",
           name: 'Shop',
           component: Shop
+        }, {
+          path: "/ebook/ranklist",
+          name: 'RankList',
+          component: RankList
         }
       ]
     },{

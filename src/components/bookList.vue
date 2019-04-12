@@ -5,7 +5,7 @@
         <p class="scribe">{{data.scribe}}</p>
     </div>
     <div class="book-list-content">
-        <div class="book-list-box clearfix" v-for="(item,index) in data.data" :key="index">
+        <div class="book-list-box clearfix" v-for="(item,index) in data.data" :key="index" @click="$emit('select',item)">
           <div class="book-list-info">
             <span class="list-num">{{index+1}}</span>
             <span class="list-name">{{item.name}}</span>
@@ -39,7 +39,7 @@ export default {
   methods:{
     detail(){
       // console.log("detail");
-      this.$router.push({path:'/detail',query:{type:this.data.type}});
+      this.$router.push({path:'/ebook/ranklist',query:{type:this.data.type}});
     }
   }
 }
