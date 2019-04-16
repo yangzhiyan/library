@@ -74,12 +74,16 @@ export default {
                     conText: "一个你所不知道的世界3，你想象不到的世界3",
                     src: require("../../public/imgs/lunbo/special_3.jpeg"),
                     link: "#"
-                    
+                },{
+                    conTitle: "刘慈欣",
+                    conText: "刘慈欣，中国当代科幻作家，自上世纪80年代中期开始创作，1999年6月起在《科幻世界》杂志上发表多篇科幻小说和科幻随笔，并出版了多部长篇科幻小说。",
+                    src: require("../../public/imgs/lunbo/special_5.jpg"),
+                    link: "#"
                 }
             ]
         },
         oneimg: {
-            title: "旅游攻略",
+            title: "阅读心得",
             linkname: "更多",
             link: "/",
             content: [

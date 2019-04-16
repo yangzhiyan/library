@@ -71,6 +71,10 @@ export default {
                 text-align: left;
                 line-height: 24px;
             }
+            img {
+                width: 260px;
+                height: 140px;
+            }
         }
         .el-carousel__arrow {
             display: none;
@@ -80,7 +84,7 @@ export default {
         .el-carousel__indicators {
             position: absolute;
             top: 120px;
-            left: 190px;
+            left: 172px;
             li {
                 button {
                      width: 14px;

@@ -9,6 +9,8 @@ import Book from '../page/book';
 import Ebook from '../page/ebook';
 import Shop from '../page/shop';
 import RankList from '../page/rankList';
+
+import Login from '../page/login';
 import Test from '../page/test';
 
 
@@ -52,6 +54,11 @@ let router = new Router({
       name: 'Test',
       component: Test
     },{
+      path: "/login",
+      name: "Login",
+      component: Login
+    }
+    ,{
       path: '*',
       redirect: '/'
     }
