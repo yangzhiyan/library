@@ -18,6 +18,7 @@ Vue.use(ElementUI);
 Vue.use(Router);
 
 let router = new Router({
+  linkActiveClass:"router-link-active",
   routes: [{
       path: "/",
       name: 'Index',

@@ -4,18 +4,18 @@
     <div class="index-nav">
         <div class="logo"></div>
         <div class="logo-text">北斗星</div>
-        <a href="/#/index">
+        <router-link to="/index" class="nav">
             <div class="text">首页</div>
-        </a>
-        <a href="/#/book">
+        </router-link>
+        <router-link to="/book" class="nav">
             <div class="text">一本好书</div>
-        </a>
-        <a href="/#/ebook">
+        </router-link>
+        <router-link to="/ebook" class="nav">
             <div class="text">电子书</div>
-        </a>
-        <a href="/#/shop">
+        </router-link>
+        <router-link to="/shop" class="nav">
             <div class="text">商城</div>
-        </a>
+        </router-link>
         <div class="search"><input type="text"><span class="el-icon-search"></span></div>
         <div class="login"><span>登录</span>|<span>注册</span></div>
     </div>
@@ -53,6 +53,14 @@ export default {
 </script>
 
 <style lang="scss">
+    
+    // .index-nav > a.active,
+	// .index-nav > a:hover,
+	// .index-nav > a:focus{
+    //     // opacity: 0.75;
+    //     background-color: #F5AA08;
+    //     // color: #fff;
+	// }
     .index {
         width: 100%;
         min-height: 800px;
@@ -62,15 +70,19 @@ export default {
             height: 70px;
             // background-color: pink;
             margin: 0 auto;
-            a {
+            .nav {
                 color: #3c3c3c;
                 float: left;
             }
+            // a:hover {
+            //     color: #F5AA10;
+            // }
             div {
                 float: left;
             }
             clear: both;
         }
+        
         .logo {
             width: 70px;
             height: 70px;
@@ -167,5 +179,9 @@ export default {
                 }
             }
         }
+    }
+    .router-link-exact-active {
+        // color: aqua;
+        background-color: #F5AA10;
     }
 </style>
