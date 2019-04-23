@@ -11,6 +11,7 @@ import Shop from '../page/shop';
 import RankList from '../page/rankList';
 
 import Login from '../page/login';
+import Register from '../page/register';
 import Test from '../page/test';
 
 
@@ -58,6 +59,10 @@ let router = new Router({
       path: "/login",
       name: "Login",
       component: Login
+    },{
+      path: "/register",
+      name: "Register",
+      component: Register
     }
     ,{
       path: '*',

@@ -17,7 +17,7 @@
             <div class="text">商城</div>
         </router-link>
         <div class="search"><input type="text"><span class="el-icon-search"></span></div>
-        <div class="login"><span>登录</span>|<span>注册</span></div>
+        <div class="login"><span @click="login">登录</span>|<span @click="register">注册</span></div>
     </div>
     <div class="content">
         <router-view></router-view>
@@ -48,19 +48,23 @@ export default {
       
     }
     
+  },
+  methods: {
+      login(){
+          this.$router.push('/login');
+      },
+      register(){
+          this.$router.push('/register');
+      },
   }
 }
 </script>
 
 <style lang="scss">
-    
-    // .index-nav > a.active,
-	// .index-nav > a:hover,
-	// .index-nav > a:focus{
-    //     // opacity: 0.75;
-    //     background-color: #F5AA08;
-    //     // color: #fff;
-	// }
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
     .index {
         width: 100%;
         min-height: 800px;
@@ -68,15 +72,11 @@ export default {
         .index-nav {
             width: 1000px;
             height: 70px;
-            // background-color: pink;
             margin: 0 auto;
             .nav {
                 color: #3c3c3c;
                 float: left;
             }
-            // a:hover {
-            //     color: #F5AA10;
-            // }
             div {
                 float: left;
             }
@@ -89,7 +89,6 @@ export default {
             background-image: url("../assets/kongleme.png");
             background-position: 10px 10px;
             background-size: 350% 350%;
-            // background-color: antiquewhite;
         }
         .logo-text {
             font-size: 30px;
@@ -136,7 +135,9 @@ export default {
             }
         }
     }
-    
+    .content {
+        margin-top: 0px;
+    }
     .footer {
         width: 100%;
         height: 220px;
