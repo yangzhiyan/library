@@ -1,21 +1,27 @@
 <template>
   <div class="rank-list">
-      <div class="rank-list-box clearfix" v-for="(item,index) in list" :key="index">
-          <div class="rank-list-img">
-              <img :src="item.image" alt="">
-          </div>
-          <div class="rank-list-text">
-              <p class="rank-text-title">{{item.name}}</p>
-              <p class="rank-text-writer">{{item.writer}}</p>
-              <div class="rank-text-text">
-                  {{item.text}}
-              </div>
-              <p class="rank-text-words">
-                  <span>{{item.words}} 万字</span> | 
-                  <span>{{item.type}}</span>
-              </p>
-          </div>
+      <div class="rank-list-title">
+          <p>图书·畅销榜</p>
+          <p>作品三周内有更新，按周热度排行</p>
       </div>
+    <router-link to="/bookDetail">
+        <div class="rank-list-box clearfix" v-for="(item,index) in list" :key="index">
+            <div class="rank-list-img">
+                <img :src="item.image" alt="">
+            </div>
+            <div class="rank-list-text">
+                <p class="rank-text-title">{{item.name}}</p>
+                <p class="rank-text-writer">{{item.writer}}</p>
+                <div class="rank-text-text">
+                    {{item.text}}
+                </div>
+                <p class="rank-text-words">
+                    <span>{{item.words}} 万字</span> | 
+                    <span>{{item.type}}</span>
+                </p>
+            </div>
+        </div>
+    </router-link>
   </div>
 </template>
 
@@ -104,6 +110,25 @@ export default {
     width: 960px;
     padding: 20px;
     margin: 0 auto;
+    a {
+        color: rgba(0,0,0,0.75);
+    }
+
+    .rank-list-title {
+        height: 110px;
+        // background-color: aqua;
+        text-align: left;
+        padding: 20px 20px;
+        p {
+            font-size: 18px;
+            line-height: 50px;
+        }
+        p:first-child {
+            font-size: 30px;
+            font-weight: 800;
+        }
+        
+    }
     .rank-list-box {
         width: 760px;
         height: 130px;
@@ -138,6 +163,9 @@ export default {
                 opacity: 0.75;
             }
         }
+    }
+    .rank-list-box:hover {
+        background-color: #ddd;
     }
   }
   .clearfix:after {

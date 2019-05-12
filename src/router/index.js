@@ -9,6 +9,13 @@ import Book from '../page/book';
 import Ebook from '../page/ebook';
 import Shop from '../page/shop';
 import RankList from '../page/rankList';
+import ShareDetail from '../page/shareDetail';
+import BookDetail from '../page/bookDetail';
+import EBookDetail from '../page/ebookDetail';
+import BookType from '../page/bookType';
+import ShopCart from '../page/shopCart';
+import Ordered from '../page/ordered';
+import MyOrder from '../page/myOrder';
 
 import Login from '../page/login';
 import Register from '../page/register';
@@ -45,11 +52,40 @@ let router = new Router({
           path: "shop",
           name: 'Shop',
           component: Shop
-        }, {
+        },{
           path: "/ebook/ranklist",
           name: 'RankList',
           component: RankList
+        },{
+          path: "share",
+          name: 'ShareDetail',
+          component: ShareDetail
+        },{
+          path: "bookDetail",
+          name: 'BookDetail',
+          component: BookDetail
+        },{
+          path: "ebookDetail",
+          name: 'EBookDetail',
+          component: EBookDetail
+        },{
+          path: "shop/bookType",
+          name: 'BookType',
+          component: BookType
+        },{
+          path: "shopCart",
+          name: 'ShopCart',
+          component: ShopCart
+        },{
+          path: "ordered",
+          name: 'Ordered',
+          component: Ordered
+        },{
+          path: "myOrder",
+          name: 'MyOrder',
+          component: MyOrder
         }
+        
       ]
     },{
       path: "/test",

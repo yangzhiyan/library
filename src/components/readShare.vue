@@ -1,16 +1,18 @@
 <template>
   <div class="read-share">
-    <div class="read-share-content" v-for="(item,index) in data" :key="index">
-        <img :src="item.src" alt="">
-        <a class="read-share-title">{{item.title}}</a>
-        <span class="read-share-text">{{item.content}}</span>
-        <div class="read-share-icon">
-          <span class="el-icon-location">hello</span>
-          <span class="read-share-img"></span>
-          <a class="read-share-imgText">shiyao</a>
-          <span class="el-icon-view">550</span>
-        </div>
-    </div>
+      <div class="read-share-content" v-for="(item,index) in data" :key="index">
+        <router-link tag="div" to="/share">
+          <img :src="item.src" alt="">
+          <a class="read-share-title">{{item.title}}</a>
+          <span class="read-share-text">{{item.content}}</span>
+          <div class="read-share-icon">
+            <span class="el-icon-location">hello</span>
+            <span class="read-share-img"></span>
+            <a class="read-share-imgText">shiyao</a>
+            <span class="el-icon-view">550</span>
+          </div>
+          </router-link>
+      </div>
   </div>
 </template>
 

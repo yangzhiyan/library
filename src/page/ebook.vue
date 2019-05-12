@@ -86,7 +86,7 @@ export default {
   methods : {
     select(item){
       console.log(item);
-      this.$router.push({path:'/detail',query:{type:this.data.type}});
+      this.$router.push({path:'/ebookDetail',query:{id:item.id}});
     }
   }
 }

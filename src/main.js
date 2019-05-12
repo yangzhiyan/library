@@ -7,9 +7,12 @@ import router from './router'
 import store from './store'
 import 'viewerjs/dist/viewer.css'
 import Viewer from 'v-viewer'
+import Axios from 'axios'
+Axios.defaults.baseURL='http://localhost:3000';
 
 Vue.use(ElementUI);
 Vue.use(Vuex);
+// Vue.use(Axios);
 Vue.use(Viewer)
 Vue.config.productionTip = false;
 window.router=router

@@ -51,6 +51,7 @@ export default {
       background: #f8f9f9;
     }
     .book-list {
+        z-index: 1;
         width: 240px;
         height: 550px;
         padding: 20px;

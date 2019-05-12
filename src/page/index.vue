@@ -17,7 +17,18 @@
             <div class="text">商城</div>
         </router-link>
         <div class="search"><input type="text"><span class="el-icon-search"></span></div>
-        <div class="login"><span @click="login">登录</span>|<span @click="register">注册</span></div>
+        <div class="login" v-if="loginStatus"><span @click="login">登录</span>|<span @click="register">注册</span></div>
+        <div class="loging" v-else>
+            <span>时妖i</span><span class="el-icon-caret-bottom"></span>
+            <div class="log-content">
+                <div>个人中心</div>
+                <div @click="shopCart">购物车</div>
+                <div @click="myOrder">我的订单</div>
+                <div>写日志</div>
+                <div>退出登录</div>
+            </div>
+        </div>
+        
     </div>
     <div class="content">
         <router-view></router-view>
@@ -38,6 +49,8 @@
 </template>
 
 <script>
+/* eslint-disable */
+import axios from 'axios'
 export default {
   name: 'Index',
   props: {
@@ -45,17 +58,31 @@ export default {
   },
   data(){
     return{
-      
+      loginStatus : false,
+
     }
     
   },
   methods: {
       login(){
-          this.$router.push('/login');
+        axios.get('/users')
+        .then(function (res) {
+            console.log(res.data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        this.$router.push('/login');
       },
       register(){
           this.$router.push('/register');
       },
+      shopCart(){
+          this.$router.push('/shopCart');
+      },
+      myOrder(){
+          this.$router.push('/myOrder');
+      }
   }
 }
 </script>
@@ -134,6 +161,43 @@ export default {
                 color:#ff9d00;
             }
         }
+        .loging {
+            position: relative;
+            z-index: 999;
+            width: 130px;
+            // background-color: pink;
+            height: 70px;
+            margin-left:20px;
+            line-height: 70px;
+            font-size: 16px;
+            font-weight: 900;
+            span:nth-child(2){
+                font-size: 16px;
+                font-weight: 400;
+                margin-left: 20px;
+            }
+            // margin-left: 20px;
+            // float: left;
+            .log-content {
+                display: none;
+                width: 140px;
+                background-color: white;
+                
+                // margin-top: 30px;
+                div {
+                    clear: both;
+                    height: 50px;
+                    width: 140px;
+                    line-height: 50px;
+                }
+                div:hover {
+                    background-color: #c9c9c9;
+                }
+            }
+        }
+        .loging:hover .log-content{
+            display: block;
+        }
     }
     .content {
         margin-top: 0px;
@@ -181,7 +245,7 @@ export default {
             }
         }
     }
-    .router-link-exact-active {
+    .index .index-nav .router-link-exact-active {
         // color: aqua;
         background-color: #F5AA10;
     }
